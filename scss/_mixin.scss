@@ -1,0 +1,97 @@
+@use "variable" as var;
+
+@mixin pd($top:16px,$bottom:16px,){
+	padding-top: $top;
+	padding-bottom: $bottom;
+}
+
+@mixin tool($tsize:17px,$tline:19px,$tcolor:var.$secndary,$twidth:none){
+	font-size:$tsize ;
+	line-height:$tline ;
+	color: $tcolor;
+	max-width: $twidth;
+	font-family: 'Roboto RobotoCondensed-Regular';
+	font-weight: 400;
+}
+@mixin input-fild{
+	width: 285px;
+	height: 32px;
+	border: none;
+	border-bottom: 1px solid var.$secndary;
+	font-size: 17px;
+	line-height: 19px;
+	outline: none;
+	background: none;
+}
+
+@mixin cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+@mixin take($ts:24px,$th:26px,$tc:var.$primary,$tf:uppercase,){
+	font-size: $ts;
+	line-height: $th;
+	color: $tc;
+	text-transform: $tf ;
+	display: inline-block;
+	font-family: 'Roboto RobotoCondensed-Medium';
+	font-weight: 500;
+}
+@mixin big{
+	font-size: 67px;
+	line-height: 68px;
+	color: var.$primary;
+	font-family: "Alegreya Sans", sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+@mixin head($hfont:50px,$hline:52px,$hcolor:var.$primary,$htf:uppercase){
+	font-size: $hfont;
+	line-height:$hline ;
+	color: $hcolor;
+	text-transform: $htf;
+    font-family: 'Roboto RobotoCondensed-Bold';
+    font-weight: 700;
+    text-align: center;
+}
+@mixin btn($bg:var.$primary,$mt:30px,$bt:22px 44px,$br:34px 0 34px 0,){
+	background:$bg ;
+	margin-top: $mt;
+	padding: $bt;
+	border-radius: $br;
+}
+
+/* Breakpoint sizes */
+$screen-xs-max: 479px;
+$screen-sm-max: 639px;
+$screen-md-max: 767px;
+$screen-lg-max: 979px;
+$screen-xl-max: 1024px;
+$screen-xxl-max: 1160px;
+
+ /* Create the mixin (usually in a separate .scss file) */
+@mixin breakpoint($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $screen-xs-max) { @content; }
+  }
+
+  @else if $media == sm {
+    @media only screen and (max-width: $screen-sm-max) { @content; }
+  }
+
+  @else if $media == md {
+    @media only screen and (max-width: $screen-md-max) { @content; }
+  }
+
+  @else if $media == lg {
+    @media only screen and (max-width: $screen-lg-max) { @content; }
+  }
+
+   @else if $media == xl {
+    @media only screen and (max-width: $screen-xl-max) { @content; }
+  }
+  
+  @else if $media == xxl {
+    @media only screen and (max-width: $screen-xxl-max) { @content; }
+  }
+}
