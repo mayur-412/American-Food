@@ -734,6 +734,7 @@ header.container-section .navbar nav ul li a:hover {
 }
 
 .show-modal {
+  z-index: 6;
   opacity: 1;
   visibility: visible;
   transform: scale(1);
