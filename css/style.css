@@ -732,7 +732,9 @@ header.container-section .navbar nav ul li a:hover {
 .close-button:hover {
   background-color: darkgray;
 }
-
+.modal video{
+  max-width: 500px;
+}
 .show-modal {
   z-index: 6;
   opacity: 1;
@@ -1728,5 +1730,20 @@ header.container-section .navbar nav ul li a:hover {
 .footer-section .row .media a:first-child {
   margin-left: 0;
 }
-
+@media only screen and (max-width: 767px){
+  .modal video{
+    max-width: 380px;
+  }
+  .modal-content{
+    max-width: 420px;
+  }
+}
+@media only screen and (max-width: 479px){
+  .modal video{
+    max-width: 268px;
+  }
+  .modal-content{
+    max-width: 309px;
+  }
+}
 /* footer-section style end */
