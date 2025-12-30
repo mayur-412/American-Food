@@ -9,16 +9,12 @@
                 }
             );
 
-$('.open').click(function(){
-    $('.popup-sction').fadeIn();
-});
-$('.close').click(function(){
-    $('.popup-sction').fadeOut();
-});
+document.getElementById("triggger").addEventListener("click", () => {
+        Fancybox.show([{ src: "#dialog-content", type: "inline" }]);
+      });
 
-$('.open-modal').click(function(){
-    $('.popup').fadeIn();
-});
-$('.close').click(function(){
-    $('.popup').fadeOut();
-});
+      document
+        .getElementById("triggger-clone")
+        .addEventListener("click", () => {
+          Fancybox.show([{ src: "#dialog-content", type: "clone" }]);
+        });
